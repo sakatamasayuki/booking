@@ -1,1 +1,32 @@
-部屋show
+<div class ="index-wrapper">
+
+  <h3>スケジュール詳細</h3>
+  
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <td><%= @room.room_name %></td>
+    </tr>
+    <tr>
+      <th>開始日</th>
+      <td><%= @room.begin.to_s(:date_jp) %></td>
+    </tr>
+    <tr>
+      <th>投稿日</th>
+      <td><%= @room.updated_at.to_s(:datetime_jp) %></td>
+    </tr>
+    <tr>
+      <th>終日</th>
+      <td><%= @room.allday ? '○' : '' %></td>
+    </tr>
+      <tr>
+      <th>スケジュールメモ</th>
+      <td><% unless @room.memo.nil? %><%= safe_join(@room.memo.split("\n"),tag(:br)) %><% end %></td>
+    </tr>
+  </table>
+  <div>
+    <p><%= link_to "スケジュール情報一覧に戻る", :rooms %></p>
+    <p><%= link_to "このスケジュールを編集する", [:edit, @room] %></p>
+    <p><%= link_to "このスケジュールを削除する", @room, data: {turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %></p>
+  </div>
+</div>

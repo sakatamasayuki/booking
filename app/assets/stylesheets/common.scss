@@ -1,0 +1,92 @@
+body {
+  margin:0;
+}
+
+header {
+  width: 100%;
+  padding: 10px;
+  background-color: #c52f24;
+  color: #fff;
+}
+
+footer{
+  width: 100%;
+  padding: 10px;
+  background-color: #c52f24;
+  color: #fff;
+}
+
+table {
+  border-spacing: 0;
+}
+
+table th {
+  background-color: #ffdfdf;
+  padding: 10px 20px;
+  text-align: center;
+  border: solid 1px black;
+}
+
+table td {
+  background-color: #f1c8c861;
+  padding: 10px 20px;
+  text-align: center;
+  border: solid 1px black;
+}
+
+.except_memo {
+  width: 300px;
+  height: 30px;
+}
+
+.text_memo {
+  width: 300px;
+  height: 140px;
+}
+
+.error_explanation {
+  color :#c52f24;
+}
+
+.error_explanation h3 {
+  padding: 15px;
+  text-align: center;
+  border: solid 1px black;
+  background-color: #f6bcb8;
+  text-align: center;
+  width: 400px;
+  height: 30px;
+}
+
+.form-wrapper {
+  padding-left: 10px;
+}
+
+.index-wrapper {
+  padding-left: 10px;
+}
+
+li {
+  list-style: none;
+  font-weight: bold;
+}
+
+.notice {
+  padding: 15px;
+  text-align: center;
+  border: solid 1px black;
+  background-color: #d1f6b8;
+  text-align: center;
+  width: 500px;
+  height: 30px;
+}
+
+.alert {
+  padding: 15px;
+  text-align: center;
+  border: solid 1px black;
+  background-color: #f6bcb8;
+  text-align: center;
+  width: 500px;
+  height: 30px;
+}

@@ -1,1 +1,34 @@
-ユーザーnew
+<div class = "form-wrapper">
+
+  <h3>ユーザー新規作成</h3>
+  
+  <%= form_with(model: @user) do |f| %>
+    <table>
+      <tr>
+        <th><%= f.label :user_name ,"ルーム名" %></th>
+        <td><%= f.text_field :user_name, class:"except_memo" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :user_intro ,"ルーム紹介	" %></th>
+        <td><%= f.text_area :user_intro, class:"except_memo" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :price ,"料金" %></th>
+        <td><%= f.number_field :price, class:"except_memo" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :address ,"住所" %></th>
+        <td><%= f.text_field :address %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :user_pic ,"ルーム画像" %></th>
+        <td><%= f.text_area :user_pic, class:"text_memo" %></td>
+      </tr>
+    </table>
+    <div>
+      <p class="submit_button"><%= f.submit "部屋を新規登録する"%></p>
+      <p><%= link_to "一覧に戻る", :users %></p>
+    </div>
+  <% end %>
+  
+</div>

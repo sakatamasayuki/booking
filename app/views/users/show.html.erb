@@ -1,1 +1,32 @@
-ユーザーshow
+<div class ="index-wrapper">
+
+  <h3>ユーザー詳細</h3>
+  
+  <table>
+    <tr>
+      <th>ユーザー名</th>
+      <td><%= @user.user_name %></td>
+    </tr>
+    <tr>
+      <th>一言紹介</th>
+      <td><%= @user.user_intro %></td>
+    </tr>
+    <tr>
+      <th>ユーザー画像</th>
+      <td><%= @user.user_pic %></td>
+    </tr>
+    <tr>
+      <th>email</th>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th>パスワード</th>
+      <td><%= @user.password %></td>
+    </tr>
+  </table>
+  <div>
+    <p><%= link_to "一覧に戻る", :users %></p>
+    <p><%= link_to "ユーザーを編集する", [:edit, @user] %></p>
+    <p><%= link_to "ユーザーを削除する", @user, data: {turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %></p>
+  </div>
+</div>
