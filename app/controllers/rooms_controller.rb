@@ -29,8 +29,8 @@ class RoomsController < ApplicationController
 
   def update
     @room = Room.find(params[:id])
-    if @room.update(params.require(:room).permit(:name, :begin, :end, :allday))
-      flash[:notice] = "「#{@room.name}」の情報を更新しました。"
+    if @room.update(params.require(:room).permit(:room_name, :room_intro, :room_pic, :price, :address))
+      flash[:notice] = "「#{@room.room_name}」の情報を更新しました。"
       redirect_to :rooms
     else
       render "edit"
@@ -40,7 +40,7 @@ class RoomsController < ApplicationController
   def destroy
     @room = Room.find(params[:id])
     @room.destroy
-    flash[:alert] = "「#{@room.name}」を削除しました。"
+    flash[:alert] = "「#{@room.room_name}」を削除しました。"
     redirect_to :rooms, status: 303
   end
 

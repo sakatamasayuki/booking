@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params.require(:user).permit(:user_name, :user_intro, :user_pic))
     if @user.save
-      flash[:notice] = "「#{@user.name}」を新規登録しました。"
+      flash[:notice] = "「#{@user.user_name}」を新規登録しました。"
       redirect_to :users
     else
       render "new", status: :unprocessable_entity
@@ -29,8 +29,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(params.require(:user).permit(:name, :begin, :end, :allday))
-      flash[:notice] = "「#{@user.name}」の情報を更新しました。"
+    if @user.update(params.require(:user).permit(:user_name, :user_intro, :user_pic))
+      flash[:notice] = "「#{@user.user_name}」の情報を更新しました。"
       redirect_to :users
     else
       render "edit"
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    flash[:alert] = "「#{@user.name}」を削除しました。"
+    flash[:alert] = "「#{@user.user_name}」を削除しました。"
     redirect_to :users, status: 303
   end
 

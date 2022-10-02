@@ -6,5 +6,6 @@ class User < ApplicationRecord
   #エラーが治らないのでrememberableを削除
 
   has_many :rooms
+  has_many :reservations
 
 end

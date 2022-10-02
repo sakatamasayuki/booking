@@ -1,1 +1,30 @@
-ユーザーedit
+<div class = "form-wrapper">
+
+  <h3>ユーザー編集</h3>
+  
+  <%= form_with(model: @user) do |f| %>
+    <table>
+      <tr>
+        <th><%= f.label :user_name ,"ユーザー名" %></th>
+        <td><%= f.text_field :user_name, class:"except_memo" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :user_intro ,"一言紹介	" %></th>
+        <td><%= f.text_area :user_intro, class:"except_memo" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :user_pic ,"ユーザー画像" %></th>
+        <td><%= f.text_area :user_pic, class:"except_memo" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :email ,"Eメール" %></th>
+        <td><%= f.text_field :email %></td>
+      </tr>
+    </table>
+    <div>
+      <p class="submit_button"><%= f.submit "ユーザーを編集する"%></p>
+      <p><%= link_to "一覧に戻る", :users %></p>
+    </div>
+  <% end %>
+
+</div>

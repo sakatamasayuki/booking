@@ -1,1 +1,34 @@
-部屋edit
+<div class = "form-wrapper">
+
+  <h3>部屋編集</h3>
+  
+  <%= form_with(model: @room) do |f| %>
+    <table>
+      <tr>
+        <th><%= f.label :room_name ,"ルーム名" %></th>
+        <td><%= f.text_field :room_name, class:"except_memo" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :room_intro ,"ルーム紹介	" %></th>
+        <td><%= f.text_area :room_intro, class:"except_memo" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :price ,"料金" %></th>
+        <td><%= f.number_field :price, class:"except_memo" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :address ,"住所" %></th>
+        <td><%= f.text_field :address %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :room_pic ,"ルーム画像" %></th>
+        <td><%= f.text_area :room_pic, class:"text_memo" %></td>
+      </tr>
+    </table>
+    <div>
+      <p class="submit_button"><%= f.submit "部屋を編集する"%></p>
+      <p><%= link_to "一覧に戻る", :rooms %></p>
+    </div>
+  <% end %>
+  
+</div>

@@ -1,0 +1,50 @@
+<h1>Reservations#index</h1>
+<p>Find me in app/views/reservations/index.html.erb</p>
+<div class ="index-wrapper">
+  <h3>部屋一覧</h3>
+
+<table>
+<thead>
+  <tr>
+    <th>予約idd</th>
+    <th>ユーザーid</th>
+    <th>部屋id</th>
+    <th>開始日</th>
+    <th>終了日</th>
+    <th>人数</th>
+    <th>合計金額</th>
+    <th>予約日時</th>
+    <th>確認</th>
+    <th>編集</th>
+    <th>削除</th>
+  </tr>
+</thead>
+  
+<tbody>
+  <% @reservations.each do |reservation| %>
+    <tr>
+      <td><%= reservation.id %></td>
+      <td><%= reservation.user_id %></td>
+      <td><%= reservation.room_id %></td>
+      <td><%= reservation.start_date %></td>
+      <td><%= reservation.end_date %></td>
+      <td><%= reservation.person_num %></td>
+      <td><%= reservation.total_price %></td>
+      <td><%= reservation.updated_at %></td>
+      <td>
+        <%= link_to "確認", reservation %>
+      </td>
+      <td>
+        <%= link_to "編集", [:edit, reservation] %>
+      </td>
+      <td>
+        <%= link_to "削除", reservation , data: {turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+
+<p><%= link_to "トップへ", :root %></p>
+
+</div>
